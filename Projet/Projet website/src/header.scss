@@ -1,0 +1,102 @@
+@use "mixins" as *;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.logo img {
+  width: 132px;
+  height: 130px;
+  float: left;
+
+  @media (max-width: 768px) {
+    width: 90px;
+    height: 90px;
+  }
+
+  @media (max-width: 480px) {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+header {
+  background-color: #fff;
+  width: auto;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    height: auto;
+    padding: 10px 0;
+  }
+}
+
+nav {
+  background-color: #fff;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .nav-text {
+    @include text;
+  }
+
+  ul {
+    background-color: #fff;
+    width: auto;
+    display: flex;
+    margin: 60px;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    @media (max-width: 768px) {
+      margin: 20px 0;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+
+  li {
+    width: 140px;
+    height: auto;
+    line-height: normal;
+    gap: 10px;
+    font-size: 18px;
+
+    @media (max-width: 768px) {
+      width: auto;
+      font-size: 16px;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 14px;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 20px;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    color: #111;
+    line-height: 1.6;
+  }
+  button {
+    align-items: center;
+    @include button;
+
+    @media (max-width: 768px) {
+      margin: 20px 0;
+      width: 80%;
+      max-width: 200px;
+    }
+  }
+}

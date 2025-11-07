@@ -1,0 +1,175 @@
+@mixin button {
+  background-color: #203241;
+  color: #fff;
+  width: 120px;
+  height: 40px;
+  border-radius: 15px;
+  font-size: 12px;
+  transition: background-color 0.3s;
+  cursor: pointer;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  text-align: center;
+  border: none;
+  &:hover {
+    background-color: #16222e;
+  }
+  @media (max-width: 600px) {
+    width: 100%;
+    max-width: 250px;
+    height: 45px;
+    font-size: 14px;
+    border-radius: 12px;
+  }
+}
+@mixin button-2 {
+  background-color: #f6f6f6;
+  color: #203241;
+  width: 120px;
+  height: 40px;
+  border-radius: 15px;
+  border: 2px solid #203241;
+  font-size: 12px;
+  transition: background-color 0.3s, color 0.3s;
+  cursor: pointer;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  &:hover {
+    background-color: #203241;
+    color: #fff;
+  }
+  @media (max-width: 600px) {
+    width: 100%;
+    max-width: 250px;
+    height: 45px;
+    font-size: 14px;
+    border-radius: 12px;
+  }
+}
+@mixin text {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: #111;
+  font-size: 12px;
+  line-height: 1.6;
+}
+@mixin text-grid {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: #111;
+  font-size: 22px;
+  line-height: 1.6;
+}
+
+@mixin header-text {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: #203241;
+  font-size: 24px;
+  text-align: center;
+  margin-top: 50px;
+  font-weight: bold;
+  line-height: 1.6;
+}
+@mixin grid-section {
+  width: auto;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 0 auto;
+  padding: 30px 15px;
+}
+@mixin footer-header {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: #203241;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+@mixin text-overlay {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+@mixin responsive-overlay {
+  @media (min-width: 1024px) {
+    font-size: 2rem;
+    padding: 15px 30px;
+    top: 40%;
+  }
+  @media (max-width: 1023px) and (min-width: 768px) {
+    font-size: 1.3rem;
+    padding: 8px 18px;
+    top: 38%;
+  }
+  @media (max-width: 767px) {
+    font-size: 1rem;
+    padding: 6px 12px;
+    width: 90%;
+    top: 45%;
+  }
+  @media (max-width: 400px) {
+    font-size: 0.9rem;
+    padding: 5px 10px;
+    top: 50%;
+  }
+}
+@media (max-width: 1024px) {
+  .hero {
+    height: 80vh;
+
+    .hero-content h1 {
+      font-size: 2rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 1.5rem;
+
+    .hero-content h1 {
+      font-size: 1.8rem;
+    }
+
+    .btn {
+      padding: 0.7rem 1.5rem;
+    }
+  }
+}
+@mixin responsive-hero {
+  @media (max-width: 480px) {
+    .hero {
+      height: 100%;
+      width: 100%;
+      padding: 1rem;
+      background-image: url("/ballons.jpg");
+      .hero-content {
+        h4 {
+          color: #fff;
+          @include header-text;
+        }
+
+        .btn {
+          width: 100%;
+          font-weight: bold;
+          border-radius: 5px;
+          text-align: center;
+          background: rgba(0, 0, 0, 0.4);
+          padding: 10px 20px;
+          margin-top: 35px;
+          @include button-2;
+        }
+      }
+    }
+  }
+}
